@@ -48,7 +48,7 @@ $(document).ready(function() {
   $("#buttons").append(word);
   $("#alphabet-button").on("click", function() {
     var alphabet = $("#alphabet");
-    // console.log(fridgeMagnet);
+    // console.log(alphabet);
     alphabet.text($(this).attr("data-alphabet"));
     $("#display").append(word);
 
