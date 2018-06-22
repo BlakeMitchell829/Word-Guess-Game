@@ -1,8 +1,7 @@
-window.onload = function () {
+$(document).ready(function() {
 
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
+
   
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
@@ -15,6 +14,8 @@ window.onload = function () {
   var wins;              // number of wins
   var losses;             // number of losses
   var space;              // Number of spaces in word '-'
+  var alphabetBtn = $("<button>"); //Buttons
+
 
   // Get elements
   var showWins = document.getElementById("Wins");
@@ -32,14 +33,25 @@ window.onload = function () {
     for (var i = 0; i < alphabet.length; i++) {
       letters.id = 'alphabet';
       list = document.createElement('li');
-      list.id = 'letter';
+      list.id = 'alphabet';
       list.innerHTML = alphabet[i];
       check();
-      myButtons.appendChild(letters);
-      letters.appendChild(list);
+      myButtons.appendChild(alphabet);
+      alphabet.appendChild(list);
     }
   }
-    
+  //Buttons
+  alphabetBtn.attr("data-alphabet" , alphabet[i]);
+  alphabetBtn.addClass("alphabet-button alphabet alphabet-button-color");
+  alphabetBtn.text(alphabet[i]);
+  alphabetBtn.text(alphabet[i]);
+  $("#buttons").append(word);
+  $("#alphabet-button").on("click", function() {
+    var alphabet = $("#alphabet");
+    // console.log(fridgeMagnet);
+    alphabet.text($(this).attr("data-alphabet"));
+    $("#display").append(word);
+
   // Select Catagory
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
@@ -144,6 +156,6 @@ window.onload = function () {
     context.clearRect(0, 0, 400, 400);
     play();
   }
+
+ 
 }
-
-

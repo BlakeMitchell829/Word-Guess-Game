@@ -64,6 +64,11 @@ button {
 
 #alphabet{
   color:rgb(109, 107, 107);
+  height: 10px;
+  width: 10px;
+  padding: 10px 10px;
+  width: 60px;
+  margin: 5px;
 }
 @media (max-width: 767px) {
   #alphabet {
