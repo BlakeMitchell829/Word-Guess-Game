@@ -11,7 +11,6 @@ window.onload = function () {
   var word;              // Selected word
   var guess;             // Guess
   var guesses = [ ];      // Stored guesses
-  var lives;             // Lives
   var counter;           // Count wrong guesses
   var wins;              // number of wins
   var losses;             // number of losses
@@ -20,7 +19,6 @@ window.onload = function () {
   // Get elements
   var showWins = document.getElementById("Wins");
   var showLosses = document.getElementById("Losses");
-  var showLives = document.getElementById("Lives");
   var showCatagory = document.getElementById("scatagory");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("Clue");
@@ -75,19 +73,6 @@ window.onload = function () {
     }
   }
   
-  // Show lives
-   comments = function () {
-    showLives.innerHTML = "You have " + lives + " lives";
-    if (lives < 1) {
-      showLives.innerHTML = "Game Over";
-    }
-    for (var i = 0; i < guesses.length; i++) {
-      if (counter + space === guesses.length) {
-        showLives.innerHTML = "You Win!";
-      }
-    }
-  }
-
   // OnClick Function
    check = function () {
     list.onclick = function () {
@@ -140,7 +125,7 @@ window.onload = function () {
     hint.onclick = function() {
 
       hints = [
-        ["One the $5 bill", "'I have a dream!'", "Invented the light bulb"]
+        ["On the $5 bill", "'I have a dream!'", "Invented the light bulb"]
         ["Thriller", "Purple Rain", "Like a Virgin"],
         ["Diamonds are a Girls Best Friend", "Fight Club", "Hunger Games"]
     ];
